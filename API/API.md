@@ -1,20 +1,18 @@
 # API
 
-
-<br>
-
 ## POST
 
 ### Find recipe(s)
-**/v1/recipe/find**
 <br>
+
+**/v1/recipe/find**
 <br>
 ***RequestBody (All fields optional)***
 ```
 {
     category: String,
     name: String,
-    ingredients: []
+    time: int
 }
 ```
 ***returns HttpStatus 200 and ResponseBody with list of matches***
@@ -22,31 +20,25 @@
 [
 	{
 	    "id": int,
-	    "employee": {
-		"id": int,
-		"identification": String,
-		"firstName": String,
-		"surname": String
-	    },
-	    "item": {
-		"id": int,
-		"type": {
-			"id": int,
-			"name": String
-		},
-		"description": String
-	    },
-	    "comment": String,
-	    "active": boolean,
-	    "dateLoaned": LocalDateTime,
-	    "dateReturned": LocalDateTime,
-	    "receivedBy": String,
-	    "returnedBy": {
-		"id": int,
-		"identification": String,
-		"firstName": String,
-		"surname": String
-	    }
+	    "ingredients": [
+            {
+                id: int,
+                name: String,
+                description: String
+            }, 
+        ...
+        ],
+        "categories": [
+            {
+                id: int,
+                name: String,
+                description: String
+            },
+        ...
+        ],
+        description: String,
+        instructions: String,
+        time: int,
 	},
 	...
 ]
@@ -54,173 +46,100 @@
 
 <br>
 
-### Create a loan
-**/v1/loan**
+### Create a recipe
+**/v1/recipe/save**
 <br>
 
 ***RequestBody***
 ```
-{
-    "comment": String,
-    "identification": String,
-    "firstName": String,
-    "surname": String,
-    "itemType": String,
-    "itemDescription": String
-}
+    {
+	    "ingredients": [
+            {
+                name: String,
+                description: String
+            }, 
+        ...
+        ],
+        "categories": [
+            {
+                name: String,
+                description: String
+            },
+        ...
+        ],
+        description: String,
+        instructions: String,
+        time: int,
+	}
 ```
 ***returns HttpStatus 200 & ResponseBody***
 ```
-{
-    "id": int,
-    "employee": {
-    	"id": int,
-	"identification": String,
-	"firstName": String,
-	"surname": String
-    },
-    "item": {
-    	"id": int,
-	"type": {
-		"id": int,
-		"name": String
-	},
-	"description": String
-    },
-    "comment": String,
-    "active": boolean,
-    "dateLoaned": LocalDateTime,
-    "dateReturned": LocalDateTime,
-    "receivedBy": String,
-    "returnedBy": {
-    	"id": int,
-	"identification": String,
-	"firstName": String,
-	"surname": String
-    }
-}
+    {
+	    "id": int,
+	    "ingredients": [
+            {
+                id: int,
+                name: String,
+                description: String
+            }, 
+        ...
+        ],
+        "categories": [
+            {
+                id: int,
+                name: String,
+                description: String
+            },
+        ...
+        ],
+        description: String,
+        instructions: String,
+        time: int,
+	}
 ```
 
-## PUT
 <br>
 
-### Return loan
-**/v1/loan**
+### Suggest a recipe
+**/v1/recipe/suggest**
 <br>
 
 ***RequestBody***
 ```
-{
-    "loanId": int,
-    "recievedBy": String,
-    "returnedBy": {
-    	"identification": String,
-	"firstName": String,
-	"surname": String
-    },
-}
+   {
+       "ingredients": [
+           {
+               "name": String,
+               "description": String
+           }
+       ]
+   }
 ```
-
-***returns httpStatus 200 and ResponseBody***
+***returns HttpStatus 200 & ResponseBody***
 ```
-{
-    "id": int,
-    "employee": {
-    	"id": int,
-	"identification": String,
-	"firstName": String,
-	"surname": String
-    },
-    "item": {
-    	"id": int,
-	"type": {
-		"id": int,
-		"name": String
+[
+	{
+	    "id": int,
+	    "ingredients": [
+            {
+                id: int,
+                name: String,
+                description: String
+            }, 
+        ...
+        ],
+        "categories": [
+            {
+                id: int,
+                name: String,
+                description: String
+            },
+        ...
+        ],
+        description: String,
+        instructions: String,
+        time: int,
 	},
-	"description": String
-    },
-    "comment": String,
-    "active": boolean,
-    "dateLoaned": LocalDateTime,
-    "dateReturned": LocalDateTime,
-    "receivedBy": String,
-    "returnedBy": {
-    	"id": int,
-	"identification": String,
-	"firstName": String,
-	"surname": String
-    }
-}
-```
-
-<br>
-
-### Update loan
-**/v1/loan/update/{loanId}**
-<br>
-
-***RequestBody***
-```
-{
-	"comment": String (Comment about the loan - optional)
-	"itemType": String (Type of item - optional)
-	"itemDescription": String (Serialnumber/modelname - optional)
-}
-```
-***returns httpStatus 200 & ResponseBody***
-```
-{
-    "id": int,
-    "employee": {
-    	"id": int,
-	"identification": String,
-	"firstName": String,
-	"surname": String
-    },
-    "item": {
-    	"id": int,
-	"type": {
-		"id": int,
-		"name": String
-	},
-	"description": String
-    },
-    "comment": String,
-    "active": boolean,
-    "dateLoaned": LocalDateTime,
-    "dateReturned": LocalDateTime,
-    "receivedBy": String,
-    "returnedBy": {
-    	"id": int,
-	"identification": String,
-	"firstName": String,
-	"surname": String
-    }
-}
-```
-
-<br>
-
-### Update employee
-**/v1/employee/update/{employeeIdentification}**
-<br>
-
-***RequestBody***
-```
-{
-	"identification": String,
-	"firstName": String,
-	"surname": String
-}
-```
-***returns httpStatus 200 & ResponseBody***
-```
-{
-    "employee": {
-    	"id": int,
-	"identification": String,
-	"firstName": String,
-	"surname": String
-    }
-}
+	...
+]
 ```
