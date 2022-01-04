@@ -37,7 +37,7 @@
         ...
         ],
         description: String,
-        instructions: String,
+        instruction: String,
         time: int,
 	},
 	...
@@ -136,7 +136,7 @@
         ...
         ],
         description: String,
-        instructions: String,
+        instruction: String,
         time: int,
 	},
 	...
