@@ -53,24 +53,23 @@
 ***RequestBody***
 ```
     {
-	    "ingredients": [
-            {
-                name: String,
-                description: String
-            }, 
-        ...
-        ],
-        "categories": [
-            {
-                name: String,
-                description: String
-            },
-        ...
-        ],
-        description: String,
-        instructions: String,
-        time: int,
-	}
+    "name": String,
+    "ingredients": [
+        {
+            "name": String,
+            "description": String
+        }
+    ],
+    "categories": [
+        {
+            "name": String,
+            "description": String
+        }
+    ],
+    "description": String,
+    "instruction": String,
+    "time": int
+}
 ```
 ***returns HttpStatus 200 & ResponseBody***
 ```
@@ -93,7 +92,7 @@
         ...
         ],
         description: String,
-        instructions: String,
+        instruction: String,
         time: int,
 	}
 ```
