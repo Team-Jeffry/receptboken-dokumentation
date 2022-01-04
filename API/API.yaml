@@ -21,6 +21,8 @@ paths:
             schema:
               type: object
               properties:
+                name:
+                  type: string
                 ingredients:
                   type: array
                   items:
@@ -41,7 +43,7 @@ paths:
                         type: string
                 description:
                   type: string
-                instructions:
+                instruction:
                   type: string
                 time:
                   type: integer
@@ -192,4 +194,3 @@ components:
               message:
                 type: string
                 
-
