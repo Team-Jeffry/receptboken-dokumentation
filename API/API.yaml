@@ -52,9 +52,9 @@ paths:
         '400':
           $ref: '#/components/responses/400Error'
           
-  /recipe/find:
+  /recipe/get:
     post:
-      description: Find recipe(s)
+      description: Get recipe(s)
       requestBody:
         required: true
         content:
@@ -62,8 +62,13 @@ paths:
             schema:
               type: object
               properties:
-                category:
-                  type: string
+                categories:
+                  type: array
+                  items: 
+                    type: object
+                    properties: 
+                      name: 
+                        type: string
                 name: 
                   type: string
                 time:
@@ -186,4 +191,3 @@ components:
             properties:
               message:
                 type: string
-                
