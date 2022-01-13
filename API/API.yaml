@@ -23,6 +23,12 @@ paths:
               properties:
                 name:
                   type: string
+                description:
+                  type: string
+                instruction:
+                  type: string
+                time:
+                  type: integer
                 ingredients:
                   type: array
                   items:
@@ -32,23 +38,10 @@ paths:
                         type: string
                       description:
                         type: string
-                categories:
+                categoryNames:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      name:
-                        type: string
-                      description:
-                        type: string
-                description:
-                  type: string
-                instruction:
-                  type: string
-                time:
-                  type: integer
-                      
-                
+                    type: string
       responses:
         '200':
           description: Successfully saved a new recipe
