@@ -11,7 +11,9 @@
 ```
 {
     recipeName: String,
-    categoryName: String,
+    categoryNames: [
+    	String
+    ],
     time: int
 }
 ```
