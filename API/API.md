@@ -5,7 +5,7 @@
 ### Find recipe(s)
 <br>
 
-**/v1/recipe/find**
+**/v1/recipe/get**
 <br>
 ***RequestBody (All fields optional)***
 ```
@@ -18,8 +18,12 @@
 ***returns HttpStatus 200 and ResponseBody with list of matches***
 ```
 [
-	{
+      {
 	    "id": int,
+	    "name": String,
+	    "description": String,
+	    "instruction": String,
+	    "time": int,
 	    "ingredients": [
             {
                 id: int,
@@ -35,12 +39,9 @@
                 description: String
             },
         ...
-        ],
-        description: String,
-        instruction: String,
-        time: int,
-	},
-	...
+        ]
+     },
+  ...
 ]
 ```
 
@@ -75,6 +76,10 @@
 ```
     {
 	    "id": int,
+	    "name": String,
+	    "description": String,
+	    "instruction": String,
+	    "time": int,
 	    "ingredients": [
             {
                 id: int,
@@ -90,11 +95,8 @@
                 description: String
             },
         ...
-        ],
-        description: String,
-        instruction: String,
-        time: int,
-	}
+        ]
+    }
 ```
 
 <br>
@@ -117,8 +119,12 @@
 ***returns HttpStatus 200 & ResponseBody***
 ```
 [
-	{
+      {
 	    "id": int,
+	    "name": String,
+	    "description": String,
+	    "instruction": String,
+	    "time": int,
 	    "ingredients": [
             {
                 id: int,
@@ -134,11 +140,8 @@
                 description: String
             },
         ...
-        ],
-        description: String,
-        instruction: String,
-        time: int,
-	},
-	...
+        ]
+     },
+  ...
 ]
 ```
