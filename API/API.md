@@ -10,8 +10,8 @@
 ***RequestBody (All fields optional)***
 ```
 {
-    category: String,
-    name: String,
+    recipeName: String,
+    categoryName: String,
     time: int
 }
 ```
