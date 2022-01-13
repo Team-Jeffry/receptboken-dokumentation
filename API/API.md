@@ -2,7 +2,7 @@
 
 ## POST
 
-### Find recipe(s)
+### Get recipe(s)
 <br>
 
 **/v1/recipe/get**
