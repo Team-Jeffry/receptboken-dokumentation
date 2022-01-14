@@ -108,41 +108,40 @@
 
 ***RequestBody***
 ```
-   {
-       "ingredients": [
-           {
-               "name": String,
-               "description": String
-           }
-       ]
-   }
+[
+    {
+        "name": string
+    },
+    ...
+]
 ```
 ***returns HttpStatus 200 & ResponseBody***
 ```
 [
       {
-	    "id": int,
-	    "name": String,
-	    "description": String,
-	    "instruction": String,
-	    "time": int,
-	    "ingredients": [
+        "id": {
+            "timestamp": integer,
+            "date": string
+        },
+        "name": string,
+        "description": string,
+        "instruction": string,
+        "time": integer,
+        "ingredients": [
             {
-                id: int,
-                name: String,
-                description: String
-            }, 
-        ...
+                "id": {
+                    "timestamp": integer,
+                    "date": string
+                },
+                "name": string,
+                "description": string
+            },
+	    ...
         ],
         "categories": [
-            {
-                id: int,
-                name: String,
-                description: String
-            },
-        ...
+            string
         ]
-     },
+    },
   ...
 ]
 ```
