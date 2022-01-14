@@ -95,17 +95,12 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                ingredients:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      name:
-                        type: string
-                      description:
-                        type: string
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
       
       responses:
         '200':
@@ -145,7 +140,7 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          $ref: '#/components/schemas/ObjectId'
         ingredients:
           type: array
           items:
@@ -165,7 +160,7 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          $ref: '#/components/schemas/ObjectId'
         name:
           type: string
         description:
@@ -175,10 +170,18 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          $ref: '#/components/schemas/ObjectId'
         name:
           type: string
         description:
+          type: string
+          
+    ObjectId:
+      type: object
+      properties:
+        timestamp:
+          type: string
+        date:
           type: string
 
   responses:
