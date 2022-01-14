@@ -139,7 +139,15 @@
 	    ...
         ],
         "categories": [
-            string
+            {
+		"id": {
+                    "timestamp": integer,
+                    "date": string
+                },
+                name: string,
+                description: string
+            },
+	    ...
         ]
     },
   ...
