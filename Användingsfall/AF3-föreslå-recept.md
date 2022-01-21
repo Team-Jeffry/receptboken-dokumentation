@@ -2,7 +2,7 @@
 ### Kap.1 - Formulär 
 | Fält                       	| Innehåll                     	| Typ av input                             	|
 |----------------------------	|------------------------------	|------------------------------------------	|
-| Ingrediens              	| Namnet på en ingrediens           	| Sträng, max 50 tecken, obligatorisk      	|
+| Ingrediens              	| Namnet på en ingrediens           	| React tags, obligatorisk      	|
 
 
 ### Kap.2 - Normalflöde
