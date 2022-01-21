@@ -14,7 +14,7 @@
     categoryNames: [
     	String
     ],
-    time: int
+    time: Int
 }
 ```
 ***returns HttpStatus 200 and ResponseBody with list of matches***
@@ -27,23 +27,20 @@
 	    "instruction": String,
 	    "time": int,
 	    "ingredients": [
-            {
-                id: int,
-                name: String,
-                description: String
-            }, 
-        ...
-        ],
-        "categories": [
-            {
-                id: int,
-                name: String,
-                description: String
-            },
-        ...
-        ]
+            	{
+                    id: int,
+                    name: String,
+                    description: String
+            	}, 
+     	    ],
+            "categories": [
+            	{
+                    id: Int,
+                    name: String,
+                    description: String
+            	},
+            ]
      },
-  ...
 ]
 ```
 
@@ -56,48 +53,44 @@
 ***RequestBody***
 ```
 {
-    "name": string,
-    "description": string,
-    "instruction": string,
-    "time": integer,
+    "name": String,
+    "description": String,
+    "instruction": String,
+    "time": Int,
     "ingredients": [
         {
-            "name": string,
-            "description": string
+            "name": String,
+            "description": String
         },
-	...
     ],
     "categoryNames": [
-        string,
-	...
+        String
     ]
 }
 ```
 ***returns HttpStatus 200 & ResponseBody***
 ```
-    {
-	    "id": int,
-	    "name": String,
-	    "description": String,
-	    "instruction": String,
-	    "time": int,
-	    "ingredients": [
+{
+	"id": Int,
+	"name": String,
+	"description": String,
+	"instruction": String,
+	"time": Int,
+	"ingredients": [
             {
-                id: int,
+                id: Int,
                 name: String,
                 description: String
             }, 
-        ...
-        ],
+     	],
         "categories": [
             {
-                id: int,
+                id: Int,
                 name: String,
                 description: String
             },
-        ...
         ]
-    }
+ }
 ```
 
 <br>
@@ -110,7 +103,7 @@
 ```
 [
     {
-        "name": string
+        "name": String
     },
     ...
 ]
@@ -119,37 +112,25 @@
 ```
 [
       {
-        "id": {
-            "timestamp": integer,
-            "date": string
-        },
-        "name": string,
-        "description": string,
-        "instruction": string,
-        "time": integer,
-        "ingredients": [
-            {
-                "id": {
-                    "timestamp": integer,
-                    "date": string
-                },
-                "name": string,
-                "description": string
-            },
-	    ...
-        ],
-        "categories": [
-            {
-		"id": {
-                    "timestamp": integer,
-                    "date": string
-                },
-                name: string,
-                description: string
-            },
-	    ...
-        ]
-    },
-  ...
+	    "id": int,
+	    "name": String,
+	    "description": String,
+	    "instruction": String,
+	    "time": int,
+	    "ingredients": [
+            	{
+                    id: int,
+                    name: String,
+                    description: String
+            	}, 
+     	    ],
+            "categories": [
+            	{
+                    id: Int,
+                    name: String,
+                    description: String
+            	},
+            ]
+     },
 ]
 ```
