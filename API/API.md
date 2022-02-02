@@ -3,11 +3,13 @@
 ## POST
 
 ### Find recipe(s)
+
 <br>
 
 **/v1/recipe/find**
 <br>
-***RequestBody (All fields optional)***
+**_RequestBody (All fields optional)_**
+
 ```
 {
     category: String,
@@ -15,7 +17,9 @@
     time: int
 }
 ```
-***returns HttpStatus 200 and ResponseBody with list of matches***
+
+**_returns HttpStatus 200 and ResponseBody with list of matches_**
+
 ```
 [
 	{
@@ -25,8 +29,8 @@
                 id: int,
                 name: String,
                 description: String
-            }, 
-        ...
+            },
+            ...
         ],
         "categories": [
             {
@@ -34,7 +38,7 @@
                 name: String,
                 description: String
             },
-        ...
+            ...
         ],
         description: String,
         instructions: String,
@@ -47,32 +51,36 @@
 <br>
 
 ### Create a recipe
+
 **/v1/recipe/save**
 <br>
 
-***RequestBody***
+**_RequestBody_**
+
 ```
     {
 	    "ingredients": [
             {
                 name: String,
                 description: String
-            }, 
-        ...
+            },
+            ...
         ],
         "categories": [
             {
                 name: String,
                 description: String
             },
-        ...
+            ...
         ],
         description: String,
         instructions: String,
         time: int,
 	}
 ```
-***returns HttpStatus 200 & ResponseBody***
+
+**_returns HttpStatus 200 & ResponseBody_**
+
 ```
     {
 	    "id": int,
@@ -81,8 +89,8 @@
                 id: int,
                 name: String,
                 description: String
-            }, 
-        ...
+            },
+            ...
         ],
         "categories": [
             {
@@ -90,7 +98,7 @@
                 name: String,
                 description: String
             },
-        ...
+            ...
         ],
         description: String,
         instructions: String,
@@ -101,10 +109,12 @@
 <br>
 
 ### Suggest a recipe
+
 **/v1/recipe/suggest**
 <br>
 
-***RequestBody***
+**_RequestBody_**
+
 ```
    {
        "ingredients": [
@@ -115,7 +125,9 @@
        ]
    }
 ```
-***returns HttpStatus 200 & ResponseBody***
+
+**_returns HttpStatus 200 & ResponseBody_**
+
 ```
 [
 	{
@@ -125,8 +137,8 @@
                 id: int,
                 name: String,
                 description: String
-            }, 
-        ...
+            },
+            ...
         ],
         "categories": [
             {
@@ -134,7 +146,7 @@
                 name: String,
                 description: String
             },
-        ...
+            ...
         ],
         description: String,
         instructions: String,
