@@ -2,19 +2,21 @@
 
 ## POST
 
-### Find recipe(s)
+### Get recipe(s)
 
 <br>
 
-**/v1/recipe/find**
+**/v1/recipe/get**
 <br>
 **_RequestBody (All fields optional)_**
 
 ```
 {
-    category: String,
-    name: String,
-    time: int
+    recipeName: String,
+    categoryNames: [
+    	String
+    ],
+    time: Int
 }
 ```
 
@@ -22,29 +24,27 @@
 
 ```
 [
-	{
+      {
 	    "id": int,
+	    "name": String,
+	    "description": String,
+	    "instruction": String,
+	    "time": int,
 	    "ingredients": [
-            {
-                id: int,
-                name: String,
-                description: String
-            },
-            ...
-        ],
-        "categories": [
-            {
-                id: int,
-                name: String,
-                description: String
-            },
-            ...
-        ],
-        description: String,
-        instructions: String,
-        time: int,
-	},
-	...
+            	{
+                    id: int,
+                    name: String,
+                    description: String
+            	},
+     	    ],
+            "categories": [
+            	{
+                    id: Int,
+                    name: String,
+                    description: String
+            	},
+            ]
+     },
 ]
 ```
 
@@ -58,52 +58,47 @@
 **_RequestBody_**
 
 ```
-    {
-	    "ingredients": [
-            {
-                name: String,
-                description: String
-            },
-            ...
-        ],
-        "categories": [
-            {
-                name: String,
-                description: String
-            },
-            ...
-        ],
-        description: String,
-        instructions: String,
-        time: int,
-	}
+{
+    "name": String,
+    "description": String,
+    "instruction": String,
+    "time": Int,
+    "ingredients": [
+        {
+            "name": String,
+            "description": String
+        },
+    ],
+    "categoryNames": [
+        String
+    ]
+}
 ```
 
 **_returns HttpStatus 200 & ResponseBody_**
 
 ```
-    {
-	    "id": int,
-	    "ingredients": [
+{
+	"id": Int,
+	"name": String,
+	"description": String,
+	"instruction": String,
+	"time": Int,
+	"ingredients": [
             {
-                id: int,
+                id: Int,
                 name: String,
                 description: String
             },
-            ...
-        ],
+     	],
         "categories": [
             {
-                id: int,
+                id: Int,
                 name: String,
                 description: String
             },
-            ...
-        ],
-        description: String,
-        instructions: String,
-        time: int,
-	}
+        ]
+ }
 ```
 
 <br>
@@ -116,42 +111,38 @@
 **_RequestBody_**
 
 ```
-   {
-       "ingredients": [
-           {
-               "name": String,
-               "description": String
-           }
-       ]
-   }
+[
+    {
+        "name": String
+    },
+    ...
+]
 ```
 
 **_returns HttpStatus 200 & ResponseBody_**
 
 ```
 [
-	{
+      {
 	    "id": int,
+	    "name": String,
+	    "description": String,
+	    "instruction": String,
+	    "time": int,
 	    "ingredients": [
-            {
-                id: int,
-                name: String,
-                description: String
-            },
-            ...
-        ],
-        "categories": [
-            {
-                id: int,
-                name: String,
-                description: String
-            },
-            ...
-        ],
-        description: String,
-        instructions: String,
-        time: int,
-	},
-	...
+            	{
+                    id: int,
+                    name: String,
+                    description: String
+            	},
+     	    ],
+            "categories": [
+            	{
+                    id: Int,
+                    name: String,
+                    description: String
+            	},
+            ]
+     },
 ]
 ```

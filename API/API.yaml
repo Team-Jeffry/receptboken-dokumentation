@@ -1,0 +1,196 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Team Jeffry - Receptboken
+  description: Cookbook with suggestions based on what you have in the fridge.
+  
+servers:
+  - url: http://localhost:8080/v1
+  
+security:
+  - BasicAuth: []
+  
+paths:
+  /recipe/save:
+    post:
+      description: Save a recipe
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                instruction:
+                  type: string
+                time:
+                  type: integer
+                ingredients:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      description:
+                        type: string
+                categoryNames:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Successfully saved a new recipe
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Recipe'
+        '400':
+          $ref: '#/components/responses/400Error'
+          
+  /recipe/get:
+    post:
+      description: Get recipe(s)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                categories:
+                  type: array
+                  items: 
+                    type: object
+                    properties: 
+                      name: 
+                        type: string
+                name: 
+                  type: string
+                time:
+                  type: integer
+                  
+      responses:
+        '200':
+          description: Successfully returned information about a recipe or multiple recipes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Recipe'
+        
+        '400':
+          $ref: '#/components/responses/400Error'
+          
+  /recipe/suggest:
+    post:
+      description: Get recipe suggestions based on given ingredients
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+      
+      responses:
+        '200':
+          description: Successfully returned recipe suggestion(s)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Recipe'
+        '400':
+          $ref: '#/components/responses/400Error'
+      
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      
+  parameters:
+    PageLimit: 
+      name: pageLimit
+      in: query
+      description: Limits the number of items on a page
+      schema:
+        type: integer
+        
+    PageNumber:
+      name: pageNumber
+      in: query
+      description: Specifies the page number of the items to be displayed
+      schema:
+        type: integer
+        
+  schemas:
+    Recipe:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        ingredients:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ingredient'
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+        description:
+          type: string
+        instructions:
+          type: string
+        time:
+          type: integer
+            
+    Category:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        name:
+          type: string
+        description:
+          type: string
+  
+    Ingredient:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        name:
+          type: string
+        description:
+          type: string
+          
+    ObjectId:
+      type: object
+      properties:
+        timestamp:
+          type: string
+        date:
+          type: string
+
+  responses:
+    400Error:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
