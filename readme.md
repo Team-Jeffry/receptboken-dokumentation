@@ -9,4 +9,4 @@ url: http://34.91.128.48 *(swedish)*
 
 <br>
 <br>
-*Lisa Ramel, Simon Nöjd, Balazs Harko - 2022*
+*Lisa Ramel, Simon Nöjd, Balazs Harko* - *2022*
