@@ -1,9 +1,9 @@
 # Team Jeffry - Receptboken
 
 ## Documentation
-*A collaborative cookbook with suggestions based on what you have in the fridge.* (swedish)
+*A collaborative cookbook with suggestions based on what you have in the fridge.*
 
-url: http://34.91.128.48
+url: http://34.91.128.48 (swedish)
 
 *See API docs for API endpoints*
 
