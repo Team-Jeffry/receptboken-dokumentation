@@ -175,3 +175,53 @@
      ...
 ]
 ```
+
+<br>
+
+## GET
+
+<br>
+
+### Get all Ingredients
+
+**/v1/ingredient/all**
+<br>
+
+**_returns HttpStatus 200 & ResponseBody_**
+
+```
+[
+	{
+	    "id": {
+		"timestamp": Int,
+		"date": String
+	    },
+	    name: String,
+	    description: String
+	},
+	...
+]
+```
+
+<br>
+
+### Get all Categories
+
+**/v1/category/all**
+<br>
+
+**_returns HttpStatus 200 & ResponseBody_**
+
+```
+[
+	{
+	    "id": {
+		"timestamp": Int,
+		"date": String
+	    },
+	    name: String,
+	    description: String
+	},
+	...
+]
+```
