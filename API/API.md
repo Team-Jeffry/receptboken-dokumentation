@@ -184,8 +184,6 @@
 
 ## GET
 
-<br>
-
 ### Get all Ingredients
 
 **/v1/ingredient/all**
