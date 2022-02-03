@@ -7,5 +7,6 @@ url: http://34.91.128.48
 
 *See API docs for API endpoints*
 
-
+<br>
+<br>
 Lisa Ramel, Simon Nöjd, Balazs Harko - 2022
