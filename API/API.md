@@ -25,26 +25,36 @@
 ```
 [
       {
-	    "id": int,
+      	    "id": {
+	        "timestamp": Int,
+            	"date": String
+	    },
 	    "name": String,
 	    "description": String,
 	    "instruction": String,
 	    "time": int,
 	    "ingredients": [
             	{
-                    id: int,
+	      	    "id": {
+		        "timestamp": Int,
+	            	"date": String
+		    },
                     name: String,
                     description: String
             	},
      	    ],
             "categories": [
             	{
-                    id: Int,
+	      	    "id": {
+		        "timestamp": Int,
+	            	"date": String
+		    },
                     name: String,
                     description: String
             	},
             ]
      },
+     ...
 ]
 ```
 
@@ -79,21 +89,30 @@
 
 ```
 {
-	"id": Int,
+	"id": {
+		"timestamp": Int,
+ 		"date": String
+    	},
 	"name": String,
 	"description": String,
 	"instruction": String,
 	"time": Int,
 	"ingredients": [
             {
-                id: Int,
+		"id": {
+			"timestamp": Int,
+			"date": String
+		},
                 name: String,
                 description: String
             },
      	],
         "categories": [
             {
-                id: Int,
+		"id": {
+			"timestamp": Int,
+			"date": String
+		},
                 name: String,
                 description: String
             },
@@ -124,25 +143,35 @@
 ```
 [
       {
-	    "id": int,
+      	    "id": {
+	        "timestamp": Int,
+            	"date": String
+	    },
 	    "name": String,
 	    "description": String,
 	    "instruction": String,
 	    "time": int,
 	    "ingredients": [
             	{
-                    id: int,
+	      	    "id": {
+		        "timestamp": Int,
+	            	"date": String
+		    },
                     name: String,
                     description: String
             	},
      	    ],
             "categories": [
             	{
-                    id: Int,
+	      	    "id": {
+		        "timestamp": Int,
+	            	"date": String
+		    },
                     name: String,
                     description: String
             	},
             ]
      },
+     ...
 ]
 ```
