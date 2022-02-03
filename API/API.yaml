@@ -2,10 +2,10 @@ openapi: 3.0.0
 info:
   version: 1.0.0
   title: Team Jeffry - Receptboken
-  description: Cookbook with suggestions based on what you have in the fridge.
+  description: A collaborative cookbook with suggestions based on what you have in the fridge.
   
 servers:
-  - url: http://localhost:8080/v1
+  - url: http://34.91.128.48/api/v1
   
 security:
   - BasicAuth: []
@@ -54,7 +54,7 @@ paths:
           
   /recipe/get:
     post:
-      description: Get recipe(s)
+      description: Returns a list of recipes matching search data in requestbody.
       requestBody:
         required: true
         content:
@@ -62,15 +62,12 @@ paths:
             schema:
               type: object
               properties:
-                categories:
+                recipeName: 
+                  type: string
+                categoryNames:
                   type: array
                   items: 
-                    type: object
-                    properties: 
-                      name: 
-                        type: string
-                name: 
-                  type: string
+                    type: string
                 time:
                   type: integer
                   
@@ -89,7 +86,7 @@ paths:
           
   /recipe/suggest:
     post:
-      description: Get recipe suggestions based on given ingredients
+      description: Returns recipe suggestions based on given ingredients. Sorted by amount of matched ingredients.
       requestBody:
         required: true
         content:
@@ -113,7 +110,37 @@ paths:
                   $ref: '#/components/schemas/Recipe'
         '400':
           $ref: '#/components/responses/400Error'
-      
+          
+  /ingredient/all:
+    get:
+      description: Returns a list of all ingredients.
+      responses:
+        '200':
+          description: Successfully returned all ingredients.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ingredient'
+        '400':
+          $ref: '#/components/responses/400Error'
+          
+  /category/all:
+    get:
+      description: Returns a list of all categories.
+      responses:
+        '200':
+          description: Successfully returned all categories.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+        '400':
+          $ref: '#/components/responses/400Error'
+          
 components:
   securitySchemes:
     BasicAuth:
@@ -141,6 +168,14 @@ components:
       properties:
         id:
           $ref: '#/components/schemas/ObjectId'
+        name:
+          type: string
+        description:
+          type: string
+        instructions:
+          type: string
+        time:
+          type: integer
         ingredients:
           type: array
           items:
@@ -149,12 +184,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Category'
-        description:
-          type: string
-        instructions:
-          type: string
-        time:
-          type: integer
             
     Category:
       type: object
