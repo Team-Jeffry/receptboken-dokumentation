@@ -6,7 +6,7 @@
 
 ## POST
 
-### Get recipe(s)
+### Get Recipe(s)
 
 <br>
 
@@ -64,7 +64,7 @@
 
 <br>
 
-### Create a recipe
+### Create a Recipe
 
 **/v1/recipe/save**
 <br>
@@ -126,7 +126,7 @@
 
 <br>
 
-### Suggest a recipe
+### Suggest a Recipe
 
 **/v1/recipe/suggest**
 <br>
