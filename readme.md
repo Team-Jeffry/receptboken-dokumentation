@@ -3,7 +3,7 @@
 ## Documentation
 *A collaborative cookbook with suggestions based on what you have in the fridge.*
 
-url: http://34.91.128.48 *(Swedish)*
+URL: http://34.91.128.48 *(Swedish)*
 
 *See API docs for API endpoints*
 
