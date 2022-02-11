@@ -77,11 +77,8 @@
     "description": String,
     "instruction": String,
     "time": Int,
-    "ingredients": [
-        {
-            "name": String,
-            "description": String
-        },
+    "ingredientNames": [
+	String	
     ],
     "categoryNames": [
         String
