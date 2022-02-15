@@ -19,5 +19,5 @@ N5. Användningsfall avslutat. <br>
 
 ### Kap.3 - Felflöde
 #### ***F1 - Fel format (inträffar i N4)***
-F1.1 Systemet visar feedback att något är fel. <br>
+F1.1 Flödet stoppas tills att alla fält har blivit ifyllda. <br>
 F1.2 Flödet fortsätter i N2. <br>
