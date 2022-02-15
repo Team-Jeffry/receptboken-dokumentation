@@ -17,8 +17,3 @@ N7. Användningsfall avslutat. <br>
 ### Kap.3 - Alternativflöde
 N3. Användaren adderar ingredienser till sökningen. <br>
 N4. Systemet validerar och adderar ingrediensen till sökningen. Flödet fortsätter i Kap.2.N3 tills alla önskade ingredienser är angivna. Flödet fortsätter i Kap.2.N5. <br>
-
-### Kap.4 - Felflöde
-#### ***F1 - Fel format (inträffar i Kap.2.N4 & Kap.3.N4)***
-F1.1 Systemet visar feedback att något är fel. <br>
-F1.2 Flödet fortsätter i N2. <br>
