@@ -12,8 +12,3 @@ N2. Systemet visar formulär enligt kap.1. <br>
 N3. Användaren fyller i formuläret och klickar på sök. <br>
 N4. Systemet validerar formuläret och visar feedback för användaren. <br>
 N5. Användningsfall avslutat. <br>
-
-### Kap.3 - Felflöde
-#### ***F1 - Fel format (inträffar i N4)***
-F1.1 Systemet visar feedback att något är fel. <br>
-F1.2 Flödet fortsätter i N2. <br>
