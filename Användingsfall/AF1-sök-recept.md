@@ -13,6 +13,6 @@ N3. Användaren fyller i formuläret och klickar på sök. <br>
 N4. Systemet validerar formuläret och visar feedback för användaren. <br>
 N5. Användningsfall avslutat. <br>
 
-### Kap.3 - Alternativflöde
+### Kap.3 - Alternativflöde (*inträffar i Kap.2.N3*)
 N3. Användaren adderar kategorier till sökningen. <br>
 N4. Systemet adderar kategorin till sökningen. Flödet fortsätter i Kap.2.N3 tills alla önskade kategorier är angivna. Flödet fortsätter i Kap.2.N4. <br>
